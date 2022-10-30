@@ -1,20 +1,20 @@
 package grupofp.modelo;
 
-public class Clientes {
+//LISTO
+
+public abstract class Clientes {
     // Atributos
     private String nombre, domicilio, nif, email;
-    private boolean clienteEstandar, clienteVIP;
+    Boolean VIP;
     // Fin atributos
 
     // Constructores
-    public Clientes(String nombre, String domicilio, String nif, String email, boolean clienteEstandar,
-            boolean clienteVIP) {
+    public Clientes(String nombre, String domicilio, String nif, String email, Boolean VIP) {
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.nif = nif;
         this.email = email;
-        this.clienteEstandar = clienteEstandar;
-        this.clienteVIP = clienteVIP;
+        this.VIP = VIP;
     }
     // Fin constructores
 
@@ -26,8 +26,7 @@ public class Clientes {
                 ", domicilio='" + getDomicilio() + "'" +
                 ", nif='" + getNif() + "'" +
                 ", email='" + getEmail() + "'" +
-                ", clienteEstandar='" + isClienteEstandar() + "'" +
-                ", clienteVIP='" + isClienteVIP() + "'" +
+                ", VIP='" + isVIP() + "'" +
                 "}";
     }
     // Fin toString
@@ -65,29 +64,16 @@ public class Clientes {
         this.email = email;
     }
 
-    public boolean isClienteEstandar() {
-        return this.clienteEstandar;
+    public Boolean isVIP() {
+        return this.VIP;
     }
 
-    public boolean getClienteEstandar() {
-        return this.clienteEstandar;
+    public Boolean getVIP() {
+        return this.VIP;
     }
 
-    public void setClienteEstandar(boolean clienteEstandar) {
-        this.clienteEstandar = clienteEstandar;
-    }
-
-    public boolean isClienteVIP() {
-        return this.clienteVIP;
-    }
-
-    public boolean getClienteVIP() {
-        return this.clienteVIP;
-    }
-
-    public void setClienteVIP(boolean clienteVIP) {
-        this.clienteVIP = clienteVIP;
+    public void setVIP(Boolean VIP) {
+        this.VIP = VIP;
     }
     // Fin Getters and Setters
-
 }

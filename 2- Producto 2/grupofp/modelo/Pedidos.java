@@ -2,6 +2,8 @@ package grupofp.modelo;
 
 import java.util.Date;
 
+// LISTO
+
 public class Pedidos {
     // Atributos
     private int numPedido, numArticulos;

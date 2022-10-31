@@ -1,6 +1,7 @@
 package grupofp.vista;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.*;
 
 
 public class GestionOS {

@@ -124,7 +124,7 @@ void Gestion_Pedidos(){
 
 }
     
-void Anadir_Articulo(){
+/*void Anadir_Articulo(){
     Scanner input = new Scanner(System.in); 
     Articulos articulo = new Articulos(); 
     //introducimos articulo desde consola, no sé si realmente es así comprobar como se hizo con Woodshops porque lo he hecho de memoria. 
@@ -147,7 +147,7 @@ void Anadir_Articulo(){
     //añadimos a la coleccion de articulos 
     articulos.add(articulo)
     //comprobamos que se ha creado y lo imprime? comprobar si realmente lo imprime... 
-    System.out.println(articulo);
+    System.out.println(articulo); 
     
 }
 void Mostrar_Articulo(){
@@ -189,5 +189,5 @@ void Mostrar_Cliente_VIP(){
 void Anadir_Pedido(){}
 void Mostrar_Pedido(){}
 void Mostrar_Pedido_Pendiente(){}
-void Mostrar_Pedido_Enviado(){}
+void Mostrar_Pedido_Enviado(){}*/
          

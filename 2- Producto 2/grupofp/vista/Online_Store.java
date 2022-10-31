@@ -14,6 +14,11 @@ public class Online_Store {
     
     //Collections 
     Set <Articulos> articulos = new HashSet<Articulos>(); 
+    Set <Pedidos> pedidos = new HashSet<Pedidos>(); 
+    Set <Clientes> clientes = new HashSet<Clientes>(); 
+    
+
+    
     
 
     // Escaner

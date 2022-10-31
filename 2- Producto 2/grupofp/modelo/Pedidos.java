@@ -1,6 +1,7 @@
 package grupofp.modelo;
 
 import java.util.Date;
+import java.util.ArrayList;
 
 // LISTO
 
@@ -9,15 +10,17 @@ public class Pedidos {
     private int numPedido, numArticulos;
     private Clientes clientes;
     private Date fechaYHora;
+    ArrayList<Articulo> articulos;
     private Float precioPedido;
     // Fin atributos
 
     // Constructor
-    public Pedidos(int numPedido, int numArticulos, Clientes clientes, Date fechaYHora, Float precioPedido) {
+    public Pedidos(int numPedido, int numArticulos, Clientes clientes, Date fechaYHora, ArrayList<articulo>, Float precioPedido) {
         this.numPedido = numPedido;
         this.numArticulos = numArticulos;
         this.clientes = clientes;
         this.fechaYHora = fechaYHora;
+        this.articulos = articulos;
         this.precioPedido = precioPedido;
     }
     // Fin constructor

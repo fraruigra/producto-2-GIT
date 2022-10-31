@@ -5,7 +5,6 @@ package grupofp.modelo;
 public abstract class Clientes {
     // Atributos
     private String nombre, domicilio, nif, email;
-    Boolean VIP;
     // Fin atributos
 
     // Constructores
@@ -14,7 +13,6 @@ public abstract class Clientes {
         this.domicilio = domicilio;
         this.nif = nif;
         this.email = email;
-        this.VIP = VIP;
     }
     // Fin constructores
 
@@ -26,7 +24,6 @@ public abstract class Clientes {
                 ", domicilio='" + getDomicilio() + "'" +
                 ", nif='" + getNif() + "'" +
                 ", email='" + getEmail() + "'" +
-                ", VIP='" + isVIP() + "'" +
                 "}";
     }
     // Fin toString
@@ -64,16 +61,10 @@ public abstract class Clientes {
         this.email = email;
     }
 
-    public Boolean isVIP() {
-        return this.VIP;
-    }
+    public abstract String tipoCliente();
 
-    public Boolean getVIP() {
-        return this.VIP;
-    }
+    public abstract float calcAnual();
 
-    public void setVIP(Boolean VIP) {
-        this.VIP = VIP;
-    }
-    // Fin Getters and Setters
+    public abstract float descuentoEnv();
+
 }

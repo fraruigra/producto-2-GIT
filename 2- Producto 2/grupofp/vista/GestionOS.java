@@ -153,6 +153,32 @@ void Anadir_Articulo(){
 void Mostrar_Articulo(){
 }
 void Anadir_Cliente(){
+    
+    Scanner input = new Scanner(System.in); 
+    Clientes cliente = new Clientes(); 
+    
+    //introducimos articulo desde consola, no sé si realmente es así comprobar como se hizo con Woodshops porque lo he hecho de memoria. 
+    System.out.println("Introducir Nombre:");
+    nombre = input.nextLine();
+    articulo.setNombre(nombre);
+    System.out.println("Introducir domicilio:");
+    domicilio  = input.nextLine();
+    articulo.setDomicilio(domicilio);
+    System.out.println("Introducir NIF:");
+    nif = input.nextLine();
+    articulo.setNif(nif);
+    System.out.println("Introducir email:");
+    email = input.nextLine();
+    articulo.setEmail(email);
+    System.out.println("Es cliente premium?");
+    vip = input.nextLine();
+    //se tiene que mirar esto porque es boolean y no se si se tiene que introducir de esta manera!!! 
+    articulo.setVIP(vip);
+    
+    //añadimos a la coleccion de articulos 
+    Clientes.add(cliente)
+    //comprobamos que se ha creado y lo imprime? comprobar si realmente lo imprime... 
+    System.out.println(cliente);
 }
 void Mostrar Cliente(){
 }

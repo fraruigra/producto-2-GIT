@@ -11,6 +11,10 @@ public class Online_Store {
         prg.inicio();
         // int opcion;
     }
+    
+    //Collections 
+    Set <Articulos> articulos = new HashSet<Articulos>(); 
+    
 
     // Escaner
     Scanner teclado = new Scanner(System.in);

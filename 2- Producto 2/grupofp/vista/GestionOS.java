@@ -125,6 +125,30 @@ void Gestion_Pedidos(){
 }
     
 void Anadir_Articulo(){
+    Scanner input = new Scanner(System.in); 
+    Articulos articulo = new Articulos(); 
+    //introducimos articulo desde consola, no sé si realmente es así comprobar como se hizo con Woodshops porque lo he hecho de memoria. 
+    System.out.println("Introducir codigo:");
+    codigo = input.nextLine();
+    articulo.setCodigo(codigo);
+    System.out.println("Introducir descripcion:");
+    descripcion = input.nextLine();
+    articulo.setDescripcion(descripcion);
+    System.out.println("Introducir precio de venta:");
+    precioventa = input.nextLine();
+    articulo.setPrecioVenta(precioventa);
+    System.out.println("Introducir gastos de envio:");
+    gastosenvio = input.nextLine();
+    articulo.setGastosEnvio(gastosenvio);
+    System.out.println("Introducir tiempo de preparacion:");
+    tiempo = input.nextLine();
+    articulo.setTiempoPreparacion(tiempo);
+    
+    //añadimos a la coleccion de articulos 
+    articulos.add(articulo)
+    //comprobamos que se ha creado y lo imprime? comprobar si realmente lo imprime... 
+    System.out.println(articulo);
+    
 }
 void Mostrar_Articulo(){
 }

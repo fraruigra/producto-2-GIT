@@ -18,4 +18,16 @@ public class Lista<L> {
     public void setLista(ArrayList<L> lista) {
         this.lista = lista;
     }
+
+    public void addArticulos(Articulos articulo) {
+    }
+
+    public void addClientes(ClienteEstandar cliente) {
+    }
+
+    public void addClientes(ClientePremium cliente) {
+    }
+
+    public void addPedidos(Pedidos pedido) {
+    }
 }

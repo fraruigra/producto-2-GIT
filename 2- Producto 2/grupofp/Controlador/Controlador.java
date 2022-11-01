@@ -1,6 +1,5 @@
 package grupofp.Controlador;
 
-import grupofp.modelo.*;
 import grupofp.vista.*;
 
 public class Controlador {
@@ -8,7 +7,7 @@ public class Controlador {
         GestionOS vista = new GestionOS();
         boolean salir = false;
         while (!salir) {
-            salir = grupofp.vista.GestionOS.inicio();
+            salir = vista.inicio(salir);
         }
     }
 }

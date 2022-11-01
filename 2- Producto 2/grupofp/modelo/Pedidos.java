@@ -7,20 +7,19 @@ import java.util.ArrayList;
 
 public class Pedidos {
     // Atributos
-    private int numPedido, numArticulos;
+    private int numPedido, cantidadArticulo;
     private Clientes clientes;
     private Date fechaYHora;
-    ArrayList<Articulo> articulos;
+    ArrayList<Articulos> articulos;
     private Float precioPedido;
     // Fin atributos
 
     // Constructor
-    public Pedidos(int numPedido, int numArticulos, Clientes clientes, Date fechaYHora, ArrayList<articulo>, Float precioPedido) {
+    public Pedidos(int numPedido, int cantidadArticulo, Clientes clientes, Date fechaYHora, Float precioPedido) {
         this.numPedido = numPedido;
-        this.numArticulos = numArticulos;
+        this.cantidadArticulo = cantidadArticulo;
         this.clientes = clientes;
         this.fechaYHora = fechaYHora;
-        this.articulos = articulos;
         this.precioPedido = precioPedido;
     }
     // Fin constructor
@@ -47,12 +46,12 @@ public class Pedidos {
         this.numPedido = numPedido;
     }
 
-    public int getNumArticulos() {
-        return this.numArticulos;
+    public int getCantidadArticulos() {
+        return this.cantidadArticulo;
     }
 
-    public void setNumArticulos(int numArticulos) {
-        this.numArticulos = numArticulos;
+    public void setCantidadArticulos(int cantidadArticulo) {
+        this.cantidadArticulo = cantidadArticulo;
     }
 
     public Clientes getClientes() {

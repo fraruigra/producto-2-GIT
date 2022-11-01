@@ -7,7 +7,6 @@ public class Online_Store {
     public static void main(String[] args) {
         Online_Store prg = new Online_Store();
         prg.inicio();
-        int opcion;
     }
 
     // Escaner

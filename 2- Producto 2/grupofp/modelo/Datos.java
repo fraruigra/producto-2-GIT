@@ -1,4 +1,5 @@
 package grupofp.modelo;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -15,8 +16,8 @@ public class Datos {
 
     public Datos(){
         listaArticulos = new Lista ();
-        ListaClientes = new Lista();
-        ListaPedidos = new Lista();
+        listaClientes = new Lista();
+        listaPedidos = new Lista();
     }
 
     public Lista<Articulos> getListaArticulos(){
@@ -26,20 +27,19 @@ public class Datos {
         return listaClientes;
     }
     public Lista<Pedidos> getListaPedidos(){
-        return ListaPedidos;
+        return listaPedidos;
     }
 
     public void setListaArticulos(Lista<Articulos> listaArticulos){
-        String codigo;
+        int codigo;
         String descripcion;
         float precioVenta;
         float gastoEnvio;
-        Date tiempoPreparacion;
-        String tiempoPreparacionString;
+        int tiempoPreparacion;
 
         Scanner sc=new Scanner(System.in);
         System.out.print("Codigo de articulo: ");
-        codigo=sc.nextLine();
+        codigo=sc.nextInt();
         System.out.print("Descripcion de articulo: ");
         descripcion=sc.nextLine();
         System.out.print("Precio de venta de articulo: ");
@@ -47,11 +47,10 @@ public class Datos {
         System.out.print("Gasto de envio de articulo: ");
         gastoEnvio=sc.nextFloat();
         System.out.print("Tiempo de preparación en minutos:");
-        tiempoPreparacionString=sc.nextLine();
-        SimpleDateFormat sdf = new SimpleDateFormat("00:00");
-        Date tiempoPreparacion = sdf.parse(tiempoPreparacionString);
+        tiempoPreparacion=sc.nextInt();
+        
 
-        Articulos articulo = new Articulos(codigo, descripcion, null, null, tiempoPreparacion);
+        Articulos articulo = new Articulos(codigo, descripcion, precioVenta, gastoEnvio, tiempoPreparacion);
         listaArticulos.addArticulos(articulo);
 
 
@@ -62,57 +61,67 @@ public class Datos {
         String domicilio;
         String nif;
         String email; 
+        int tipo;
 
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Nombre de cliente: ");
         nombre=sc.nextLine();
         System.out.print("Dni de cliente: ");
-        dni=sc.nextLine();
-        System.out.print("Correo del cliente: ");
-        correo=sc.nextLine();
-        System.out.print("Gasto de envio de articulo: ");
-        direccion=sc.nextLine();
+        nif=sc.nextLine();
+        System.out.print("Email del cliente: ");
+        email=sc.nextLine();
+        System.out.print("Domicilio del cliente: ");
+        domicilio=sc.nextLine();
         System.out.println("Elige tipo de Cliente: ");
         System.out.println("1. Cliente Estandard: ");
         System.out.println("2. Cliente Premium: ");
-            tipo = sn.nextInt();
+            tipo = sc.nextInt();
         if(tipo==1){
-            ClienteEstandard cliente = new ClienteEstandar(nombre,dni,correo,direccion);
+            ClienteEstandar cliente = new ClienteEstandar(nombre,nif,email,domicilio);
             listaClientes.addClientes(cliente);
         }else if(tipo==2){
-            ClientePremium cliente = new ClientePremium(nombre,dni,correo,direccion);
+            ClientePremium cliente = new ClientePremium(nombre,nif,email,domicilio);
             listaClientes.addClientes(cliente);
         }
     }
 
     public void setListaPedidos(Lista<Pedidos> listaPedidos) {
         int numPedido;
-        int cantidad;
-        Date fecha;
+        int codigoArticulo;
+        int cantidadArticulo;
         String fechaString;
-        String dni;
+        String nif;
+        Date fechaYHora;
+        float precioPedido;
 
         Scanner sc=new Scanner(System.in);
 
         System.out.print("Numero de pedido: ");
         numPedido=sc.nextInt();
-        System.out.print("Cantidad de pedidos: ");
-        cantidad=sc.nextInt();
+        System.out.print("Codigo de Articulo: ");
+        codigoArticulo=sc.nextInt();
+        System.out.print("Cantidad: ");
+        cantidadArticulo=sc.nextInt();
         System.out.print("Fecha y hora de envio: ");
-        fechaString = sc.nextLine();
+        fechaString = sc.next();
+        //DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy 00:00");
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy 00:00");
         Date fecha = sdf.parse(fechaString);
         System.out.print("Dni de cliente del pedido: ");
-        dni=sc.nextLine();
+        nif=sc.nextLine();
         for(ListaClientes listaClientes : listaClientes){
-            if(listaClientes.clientes.getDni()==dni){
+            if(listaClientes.clientes.getNif()==nif){
                 setListaClientes(listaClientes);
             }
         }
-        Pedidos pedido = new Pedidos(numPedido,cantidad,fecha,articulos,cliente);
-        listaPedidos.addPedido(pedido);
+        precioPedido = ListaArticulos.getPrecioVenta();
+
+        Pedidos pedido = new Pedidos(numPedido, cantidadArticulo, clientes, nif, fechaYHora, precioPedido);
+        listaPedidos.addPedidos(pedido);
     }
+
+   
 
     public void eliminarPedido(Lista<Pedidos> listaPedidos){
         int numPedido;

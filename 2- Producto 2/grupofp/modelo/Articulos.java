@@ -1,18 +1,17 @@
 package grupofp.modelo;
 
-import java.util.Date;
-
 // LISTO
 
 public class Articulos {
     // Atributos
-    private String codigo, descripcion;
+    private int codigo;
+    private String descripcion;
     private Float precioVenta, gastosEnvio;
-    private Date tiempoPreparacion;
+    private int tiempoPreparacion;
     // Fin atributos
 
     // Inicio constructores
-    public Articulos(String codigo, String descripcion, Float precioVenta, Float gastosEnvio, Date tiempoPreparacion) {
+    public Articulos(int codigo, String descripcion, Float precioVenta, Float gastosEnvio, int tiempoPreparacion) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioVenta = precioVenta;
@@ -35,11 +34,11 @@ public class Articulos {
     // Fin toString
 
     // Getters and Setters
-    public String getCodigo() {
+    public int getCodigo() {
         return this.codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -67,11 +66,11 @@ public class Articulos {
         this.gastosEnvio = gastosEnvio;
     }
 
-    public Date getTiempoPreparacion() {
+    public int getTiempoPreparacion() {
         return this.tiempoPreparacion;
     }
 
-    public void setTiempoPreparacion(Date tiempoPreparacion) {
+    public void setTiempoPreparacion(int tiempoPreparacion) {
         this.tiempoPreparacion = tiempoPreparacion;
     }
     // Fin getters and setters

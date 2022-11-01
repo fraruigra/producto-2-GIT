@@ -3,18 +3,13 @@ package grupofp.modelo;
 import java.util.Date;
 import java.util.ArrayList;
 
-// LISTO
-
 public class Pedidos {
-    // Atributos
     private int numPedido, cantidadArticulo;
     private Clientes clientes;
     private Date fechaYHora;
     ArrayList<Articulos> articulos;
     private Float precioPedido;
-    // Fin atributos
 
-    // Constructor
     public Pedidos(int numPedido, int cantidadArticulo, Clientes clientes, Date fechaYHora, Float precioPedido) {
         this.numPedido = numPedido;
         this.cantidadArticulo = cantidadArticulo;
@@ -22,9 +17,7 @@ public class Pedidos {
         this.fechaYHora = fechaYHora;
         this.precioPedido = precioPedido;
     }
-    // Fin constructor
 
-    // toString
     @Override
     public String toString() {
         return "{" +
@@ -35,9 +28,11 @@ public class Pedidos {
                 ", precioPedido='" + getPrecioPedido() + "'" +
                 "}";
     }
-    // Fin toString
 
-    // Getters and Setters
+    private String getNumArticulos() {
+        return null;
+    }
+
     public int getNumPedido() {
         return this.numPedido;
     }
@@ -77,5 +72,4 @@ public class Pedidos {
     public void setPrecioPedido(Float precioPedido) {
         this.precioPedido = precioPedido;
     }
-    // Fin Getters and Setter
 }

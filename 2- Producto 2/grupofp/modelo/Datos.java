@@ -1,87 +1,87 @@
 package grupofp.modelo;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.Set;
 
 public class Datos {
     Lista<Articulos> listaArticulos;
-    Lista<Clientes> listaClientes; 
+    Lista<Clientes> listaClientes;
     Lista<Pedidos> listaPedidos;
+    Clientes clientes;
 
-    
-
-    public Datos(){
-        listaArticulos = new Lista ();
+    public Datos() {
+        listaArticulos = new Lista();
         listaClientes = new Lista();
         listaPedidos = new Lista();
     }
 
-    public Lista<Articulos> getListaArticulos(){
+    public Lista<Articulos> getListaArticulos() {
         return listaArticulos;
     }
-    public Lista<Clientes> getListaClientes(){
+
+    public Lista<Clientes> getListaClientes() {
         return listaClientes;
     }
-    public Lista<Pedidos> getListaPedidos(){
+
+    public Lista<Pedidos> getListaPedidos() {
         return listaPedidos;
     }
 
-    public void setListaArticulos(Lista<Articulos> listaArticulos){
+    public void setListaArticulos(Lista<Articulos> listaArticulos) {
         int codigo;
         String descripcion;
         float precioVenta;
         float gastoEnvio;
         int tiempoPreparacion;
 
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Codigo de articulo: ");
-        codigo=sc.nextInt();
+        codigo = sc.nextInt();
         System.out.print("Descripcion de articulo: ");
-        descripcion=sc.nextLine();
+        descripcion = sc.nextLine();
         System.out.print("Precio de venta de articulo: ");
-        precioVenta=sc.nextFloat();
+        precioVenta = sc.nextFloat();
         System.out.print("Gasto de envio de articulo: ");
-        gastoEnvio=sc.nextFloat();
+        gastoEnvio = sc.nextFloat();
         System.out.print("Tiempo de preparación en minutos:");
-        tiempoPreparacion=sc.nextInt();
-        
+        tiempoPreparacion = sc.nextInt();
 
         Articulos articulo = new Articulos(codigo, descripcion, precioVenta, gastoEnvio, tiempoPreparacion);
         listaArticulos.addArticulos(articulo);
 
-
     }
 
-    public void setListaClientes(Lista<Clientes> listaClientes){
+    public void setListaClientes(Lista<Clientes> listaClientes) {
         String nombre;
         String domicilio;
         String nif;
-        String email; 
+        String email;
         int tipo;
 
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Nombre de cliente: ");
-        nombre=sc.nextLine();
+        nombre = sc.nextLine();
         System.out.print("Dni de cliente: ");
-        nif=sc.nextLine();
+        nif = sc.nextLine();
         System.out.print("Email del cliente: ");
-        email=sc.nextLine();
+        email = sc.nextLine();
         System.out.print("Domicilio del cliente: ");
-        domicilio=sc.nextLine();
+        domicilio = sc.nextLine();
         System.out.println("Elige tipo de Cliente: ");
         System.out.println("1. Cliente Estandard: ");
         System.out.println("2. Cliente Premium: ");
-            tipo = sc.nextInt();
-        if(tipo==1){
-            ClienteEstandar cliente = new ClienteEstandar(nombre,nif,email,domicilio);
+        tipo = sc.nextInt();
+        if (tipo == 1) {
+            ClienteEstandar cliente = new ClienteEstandar(nombre, nif, email, domicilio);
             listaClientes.addClientes(cliente);
-        }else if(tipo==2){
-            ClientePremium cliente = new ClientePremium(nombre,nif,email,domicilio);
+        } else if (tipo == 2) {
+            ClientePremium cliente = new ClientePremium(nombre, nif, email, domicilio);
             listaClientes.addClientes(cliente);
         }
     }
@@ -95,23 +95,23 @@ public class Datos {
         Date fechaYHora;
         float precioPedido;
 
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Numero de pedido: ");
-        numPedido=sc.nextInt();
+        numPedido = sc.nextInt();
         System.out.print("Codigo de Articulo: ");
-        codigoArticulo=sc.nextInt();
+        codigoArticulo = sc.nextInt();
         System.out.print("Cantidad: ");
-        cantidadArticulo=sc.nextInt();
+        cantidadArticulo = sc.nextInt();
         System.out.print("Fecha y hora de envio: ");
         fechaString = sc.next();
-        //DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy 00:00");
+        // DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy 00:00");
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy 00:00");
         Date fecha = sdf.parse(fechaString);
         System.out.print("Dni de cliente del pedido: ");
-        nif=sc.nextLine();
-        for(ListaClientes listaClientes : listaClientes){
-            if(listaClientes.clientes.getNif()==nif){
+        nif = sc.nextLine();
+        for (ListaClientes listaClientes : listaClientes) {
+            if (listaClientes.clientes.getNif() == nif) {
                 setListaClientes(listaClientes);
             }
         }
@@ -121,25 +121,18 @@ public class Datos {
         listaPedidos.addPedidos(pedido);
     }
 
-   
-
-    public void eliminarPedido(Lista<Pedidos> listaPedidos){
+    public void eliminarPedido(Lista<Pedidos> listaPedidos) {
         int numPedido;
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Numero de pedido a eliminar: ");
-        numPedido=sc.nextInt();
-        for(ListaPedidos listaPedidos : listaPedidos){
-            if(listaPedidos.pedidos.getNumPedido()==numPedido && !listaArticulos.articulo.getEnviado()){
+        numPedido = sc.nextInt();
+        for (ListaPedidos listaPedidos : listaPedidos) {
+            if (listaPedidos.pedidos.getNumPedido() == numPedido && !listaArticulos.articulo.getEnviado()) {
                 listaPedidos.pedidos.remove(pedidos);
-            }else{
+            } else {
                 System.out.print("Pedido no encontrado");
             }
         }
     }
 
-  
 }
-
-
-
-

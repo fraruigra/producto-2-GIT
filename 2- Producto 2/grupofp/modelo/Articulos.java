@@ -1,16 +1,11 @@
 package grupofp.modelo;
 
-// LISTO
-
 public class Articulos {
-    // Atributos
     private int codigo;
     private String descripcion;
     private Float precioVenta, gastosEnvio;
     private int tiempoPreparacion;
-    // Fin atributos
 
-    // Inicio constructores
     public Articulos(int codigo, String descripcion, Float precioVenta, Float gastosEnvio, int tiempoPreparacion) {
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -18,9 +13,7 @@ public class Articulos {
         this.gastosEnvio = gastosEnvio;
         this.tiempoPreparacion = tiempoPreparacion;
     }
-    // Fin constructores
 
-    // toString
     @Override
     public String toString() {
         return "{" +
@@ -31,9 +24,7 @@ public class Articulos {
                 ", tiempoPreparacion='" + getTiempoPreparacion() + "'" +
                 "}";
     }
-    // Fin toString
 
-    // Getters and Setters
     public int getCodigo() {
         return this.codigo;
     }
@@ -73,5 +64,4 @@ public class Articulos {
     public void setTiempoPreparacion(int tiempoPreparacion) {
         this.tiempoPreparacion = tiempoPreparacion;
     }
-    // Fin getters and setters
 }

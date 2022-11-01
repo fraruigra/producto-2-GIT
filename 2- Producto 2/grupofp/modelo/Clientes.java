@@ -1,22 +1,15 @@
 package grupofp.modelo;
 
-//LISTO
-
 public abstract class Clientes {
-    // Atributos
     private String nombre, domicilio, nif, email;
-    // Fin atributos
 
-    // Constructores
     public Clientes(String nombre, String domicilio, String nif, String email) {
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.nif = nif;
         this.email = email;
     }
-    // Fin constructores
 
-    // toString
     @Override
     public String toString() {
         return "{" +
@@ -26,9 +19,7 @@ public abstract class Clientes {
                 ", email='" + getEmail() + "'" +
                 "}";
     }
-    // Fin toString
 
-    // Getters and Setters
     public String getNombre() {
         return this.nombre;
     }

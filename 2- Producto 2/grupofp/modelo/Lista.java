@@ -4,30 +4,25 @@ import java.util.ArrayList;
 
 public class Lista<L> {
 
-    private L dato;
     protected ArrayList<L> lista;
 
-    public L getDato() {
-        return dato;
+    public Lista(){
+        lista = new ArrayList<>();
     }
 
-    public ArrayList<L> getLista() {
-        return lista;
+    public boolean delete(L l){
+        return lista.remove(l);
+    }
+    public boolean add(L l){
+        if(lista.contains(l))
+            return false;
+        lista.add(l);
+        return true;
     }
 
-    public void setLista(ArrayList<L> lista) {
-        this.lista = lista;
+    public ArrayList<L> getArrayList(){
+        ArrayList<L> alist = new ArrayList<>(lista);
+        return alist;
     }
 
-    public void addArticulos(Articulos articulo) {
-    }
-
-    public void addClientes(ClienteEstandar cliente) {
-    }
-
-    public void addClientes(ClientePremium cliente) {
-    }
-
-    public void addPedidos(Pedidos pedido) {
-    }
-}
+}    

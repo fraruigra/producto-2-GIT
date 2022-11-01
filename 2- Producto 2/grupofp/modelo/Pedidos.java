@@ -1,7 +1,9 @@
 package grupofp.modelo;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+
 
 // LISTO
 
@@ -9,73 +11,75 @@ public class Pedidos {
     // Atributos
     private int numPedido, cantidadArticulo;
     private Clientes clientes;
-    private Date fechaYHora;
-    ArrayList<Articulos> articulos;
-    private Float precioPedido;
+    private Articulos articulos;
+    private LocalDateTime fechaYHora;
     // Fin atributos
+   
 
     // Constructor
-    public Pedidos(int numPedido, int cantidadArticulo, Clientes clientes, Date fechaYHora, Float precioPedido) {
+    public Pedidos(int numPedido, int cantidadArticulo, Articulos articulos, Clientes clientes, LocalDateTime fechaYHora) {
         this.numPedido = numPedido;
         this.cantidadArticulo = cantidadArticulo;
         this.clientes = clientes;
         this.fechaYHora = fechaYHora;
-        this.precioPedido = precioPedido;
     }
     // Fin constructor
 
-    // toString
-    @Override
-    public String toString() {
-        return "{" +
-                " numPedido='" + getNumPedido() + "'" +
-                ", numArticulos='" + getNumArticulos() + "'" +
-                ", clientes='" + getClientes() + "'" +
-                ", fechaYHora='" + getFechaYHora() + "'" +
-                ", precioPedido='" + getPrecioPedido() + "'" +
-                "}";
-    }
-    // Fin toString
-
-    // Getters and Setters
+//getters y setters
     public int getNumPedido() {
-        return this.numPedido;
+        return numPedido;
     }
 
     public void setNumPedido(int numPedido) {
         this.numPedido = numPedido;
     }
-
-    public int getCantidadArticulos() {
-        return this.cantidadArticulo;
+    public int getCantidadArticulo() {
+        return cantidadArticulo;
     }
 
-    public void setCantidadArticulos(int cantidadArticulo) {
+    public void setCantidadArticulo(int cantidadArticulo) {
         this.cantidadArticulo = cantidadArticulo;
     }
-
     public Clientes getClientes() {
-        return this.clientes;
+        return clientes;
     }
 
     public void setClientes(Clientes clientes) {
         this.clientes = clientes;
     }
-
-    public Date getFechaYHora() {
-        return this.fechaYHora;
+    public Articulos getArticulos() {
+        return articulos;
     }
 
-    public void setFechaYHora(Date fechaYHora) {
+    public void setArticulos(Articulos articulos) {
+        this.articulos = articulos;
+    }
+    public LocalDateTime getFechaYHora() {
+        return fechaYHora;
+    }
+
+    public void setFechaYHora(LocalDateTime fechaYHora) {
         this.fechaYHora = fechaYHora;
     }
 
-    public Float getPrecioPedido() {
-        return this.precioPedido;
+    public boolean pedidoEnviado(){
+        long minutos = ChronoUnit.MINUTES.between(this.getFechaYHora(), LocalDateTime.now());
+        return(articulos.getTiempoPreparacion() <= minutos);
     }
 
-    public void setPrecioPedido(Float precioPedido) {
-        this.precioPedido = precioPedido;
+    public double precioEnvio(){
+        Double descuentoEnvio = articulos.getGastosEnvio() * clientes.descuentoEnvio() / 100;
+        Double gastosEnvio = articulos.getGastosEnvio() - descuentoEnvio;
+        Double precioTotal = articulos.getPrecioVenta() * this.cantidadArticulo + gastosEnvio;
+
+        return precioTotal;
     }
-    // Fin Getters and Setter
+    @Override
+    public String toString() {
+        return "Pedidos [numPedido=" + numPedido + ", cantidadArticulo=" + cantidadArticulo + ", clientes=" + clientes
+                + ", articulos=" + articulos + ", fechaYHora=" + fechaYHora + "]";
+    }
+    
+    
+
 }

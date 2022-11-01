@@ -1,17 +1,19 @@
 package grupofp.modelo;
 
+import java.time.LocalDateTime;
+
 // LISTO
 
 public class Articulos {
     // Atributos
-    private int codigo;
+    private String codigo;
     private String descripcion;
-    private Float precioVenta, gastosEnvio;
-    private int tiempoPreparacion;
+    private Double precioVenta, gastosEnvio;
+    private LocalDateTime tiempoPreparacion;
     // Fin atributos
 
     // Inicio constructores
-    public Articulos(int codigo, String descripcion, Float precioVenta, Float gastosEnvio, int tiempoPreparacion) {
+    public Articulos(String codigo, String descripcion, Double precioVenta, Double gastosEnvio, LocalDateTime tiempoPreparacion) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioVenta = precioVenta;
@@ -34,11 +36,11 @@ public class Articulos {
     // Fin toString
 
     // Getters and Setters
-    public int getCodigo() {
+    public String getCodigo() {
         return this.codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -50,28 +52,30 @@ public class Articulos {
         this.descripcion = descripcion;
     }
 
-    public Float getPrecioVenta() {
+    public Double getPrecioVenta() {
         return this.precioVenta;
     }
 
-    public void setPrecioVenta(Float precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
-    public Float getGastosEnvio() {
+    public Double getGastosEnvio() {
         return this.gastosEnvio;
     }
 
-    public void setGastosEnvio(Float gastosEnvio) {
+    public void setGastosEnvio(Double gastosEnvio) {
         this.gastosEnvio = gastosEnvio;
     }
 
-    public int getTiempoPreparacion() {
+    public LocalDateTime getTiempoPreparacion() {
         return this.tiempoPreparacion;
     }
 
-    public void setTiempoPreparacion(int tiempoPreparacion) {
+    public void setTiempoPreparacion(LocalDateTime tiempoPreparacion) {
         this.tiempoPreparacion = tiempoPreparacion;
     }
     // Fin getters and setters
+
+    
 }

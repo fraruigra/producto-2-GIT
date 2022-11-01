@@ -1,38 +1,28 @@
 package grupofp.modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaClientes extends Lista<ClientePremium> {
-    ArrayList<ClientePremium> clientes;
-
-    public ListaClientes(ArrayList<ClientePremium> clientes) {
-        this.clientes = clientes;
+    public List<Clientes> getClientes(String tipoCliente){
+        List<Clientes> cl = new ArrayList<>();
+        for(Clientes cliente : this.getArrayList()){
+            if(cliente.tipoCliente().equals(tipoCliente)){
+                if(tipoCliente.equals("ClientePremium")){
+                    ClientePremium nuevoCliente = new ClientePremium();
+                    cl.add(nuevoCliente);
+                }else{
+                    ClienteEstandar nuevoCliente = new ClienteEstandar();
+                    cl.add(nuevoCliente);
+                 }
+            }
+        } return cl;
     }
-
-    public ArrayList<ClientePremium> getClientes() {
-        return clientes;
-    }
-
-    @Override
-    public ArrayList<ClientePremium> getLista() {
-        return lista;
-    }
-
-    public void setClientes(ArrayList<ClientePremium> clientes) {
-        this.clientes = clientes;
-    }
-
-    @Override
-    public void setLista(ArrayList<ClientePremium> lista) {
-        this.lista = lista;
-    }
-
-    public void addCliente(ClientePremium cliente) {
-        clientes.add(cliente);
-    }
-
-    @Override
-    public String toString() {
-        return "ListaClientes{" + "clientes=" + clientes + '}';
+    public Clientes getClienteNif(String nif){
+        for(Clientes cliente : this.getArrayList()){
+            if(cliente.getNif().equals(nif)){
+                return cliente;
+            }
+        }return null;
     }
 }

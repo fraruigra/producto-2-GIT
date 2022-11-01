@@ -3,7 +3,8 @@ package grupofp.modelo;
 //CASI LISTO
 
 public class ClientePremium extends Clientes {
-    public ClientePremium(String nombre, String domicilio, String nif, String email) {
+
+    public ClientePremium() {
         super(nombre, domicilio, nif, email);
     }
 

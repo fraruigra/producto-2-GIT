@@ -1,5 +1,6 @@
 package grupofp.modelo;
 
+
 //LISTO
 
 public abstract class Clientes {
@@ -8,7 +9,7 @@ public abstract class Clientes {
     // Fin atributos
 
     // Constructores
-    public Clientes(String nombre, String domicilio, String nif, String email) {
+    public Clientes(String nif, String nombre, String email, String domicilio) {
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.nif = nif;
@@ -66,5 +67,8 @@ public abstract class Clientes {
     public abstract float calcAnual();
 
     public abstract float descuentoEnv();
+
+
+
 
 }

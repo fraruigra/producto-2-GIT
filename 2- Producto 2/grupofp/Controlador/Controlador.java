@@ -3,7 +3,6 @@ package grupofp.Controlador;
 import java.time.LocalDateTime;
 
 import grupofp.modelo.*;
-import grupofp.modelo.Datos;
 import grupofp.vista.*;
 
 public class Controlador {
@@ -86,7 +85,7 @@ public boolean anadirClientePremium(String nif, String nombre, String email, Str
 public Clientes getClienteNif(String nif){
     return datos.getClienteNif(nif);
 }
-public boolean ClienteExistente(String nif){
+public Clientes ClienteExistente(String nif){
     return datos.getClienteNif(nif);
 }
 

@@ -4,7 +4,7 @@ package grupofp.modelo;
 
 public class ClientePremium extends Clientes {
     public ClientePremium(String nombre, String domicilio, String nif, String email) {
-        super(nombre, domicilio, nif, email, VIP);
+        super(nombre, domicilio, nif, email);
     }
 
     @Override

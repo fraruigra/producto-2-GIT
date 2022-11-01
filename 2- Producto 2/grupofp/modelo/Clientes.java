@@ -8,7 +8,7 @@ public abstract class Clientes {
     // Fin atributos
 
     // Constructores
-    public Clientes(String nombre, String domicilio, String nif, String email, Boolean VIP) {
+    public Clientes(String nombre, String domicilio, String nif, String email) {
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.nif = nif;

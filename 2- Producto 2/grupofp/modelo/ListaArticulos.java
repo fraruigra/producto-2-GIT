@@ -2,32 +2,32 @@ package grupofp.modelo;
 
 import java.util.ArrayList;
 
-public class ListaArticulos extends Lista<Articulo> {
-    ArrayList<Articulo> articulos;
+public class ListaArticulos extends Lista<Articulos> {
+    ArrayList<Articulos> articulos;
 
-    public ListaArticulos(Articulo articulo) {
+    public ListaArticulos(Articulos articulo) {
         articulos = new ArrayList<>();
     }
 
-    public ArrayList<Articulo> getArticulos() {
+    public ArrayList<Articulos> getArticulos() {
         return articulos;
     }
 
     @Override
-    public ArrayList<Articulo> getLista() {
+    public ArrayList<Articulos> getLista() {
         return lista;
     }
 
-    public void setArticulos(ArrayList<Articulo> articulos) {
+    public void setArticulos(ArrayList<Articulos> articulos) {
         this.articulos = articulos;
     }
 
-    public void addArticulo(Articulo articulo) {
+    public void addArticulo(Articulos articulo) {
         articulos.add(articulo);
     }
 
     @Override
-    public void setLista(ArrayList<Articulo> lista) {
+    public void setLista(ArrayList<Articulos> lista) {
         this.lista = lista;
     }
 
@@ -35,3 +35,4 @@ public class ListaArticulos extends Lista<Articulo> {
     public String toString() {
         return "ListaArticulos{" + "articulos=" + articulos + '}';
     }
+}

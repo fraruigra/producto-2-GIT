@@ -1,8 +1,8 @@
 package grupofp.vista;
+
 import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.util.*;
-
 
 public class GestionOS {
     private Controlador controlador;
@@ -12,7 +12,7 @@ public class GestionOS {
         controlador = new Controlador();
     }
 
-    public void inicio() {
+    public static boolean inicio() {
         boolean salir = false;
         char opcio;
         do {
@@ -47,8 +47,9 @@ resp = " ";
 }
 return resp.charAt(0);
 }
+
 }
-                  
+
 void Gestion_Articulos(){
     Scanner sn = new Scanner(system.in); 
     boolean salir = false; 
@@ -68,6 +69,7 @@ void Gestion_Articulos(){
         }
 
 }
+
 void Gestion_Clientes(){
     Scanner sn = new Scanner(system.in); 
     boolean salir = false; 
@@ -96,6 +98,7 @@ void Gestion_Clientes(){
         }
 
 }
+
 void Gestion_Pedidos(){
     Scanner sn = new Scanner(system.in); 
     boolean salir = false; 
@@ -190,4 +193,3 @@ void Anadir_Pedido(){}
 void Mostrar_Pedido(){}
 void Mostrar_Pedido_Pendiente(){}
 void Mostrar_Pedido_Enviado(){}*/
-         

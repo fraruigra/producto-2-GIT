@@ -5,9 +5,10 @@ import grupofp.vista.*;
 
 public class Controlador {
     public static void main(String[] args) {
-        Vista vista = new Vista();
-        boolean salir=false;
-        while(!salir){
-            salir=vista.menuInicial(salir);
+        GestionOS vista = new GestionOS();
+        boolean salir = false;
+        while (!salir) {
+            salir = grupofp.vista.GestionOS.inicio();
         }
     }
+}

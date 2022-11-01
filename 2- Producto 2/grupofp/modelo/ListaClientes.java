@@ -2,32 +2,32 @@ package grupofp.modelo;
 
 import java.util.ArrayList;
 
-public class ListaClientes extends Lista<Cliente> {
-    ArrayList<Cliente> clientes;
+public class ListaClientes extends Lista<ClientePremium> {
+    ArrayList<ClientePremium> clientes;
 
-    public ListaClientes(ArrayList<Cliente> clientes) {
+    public ListaClientes(ArrayList<ClientePremium> clientes) {
         this.clientes = clientes;
     }
 
-    public ArrayList<Cliente> getClientes() {
+    public ArrayList<ClientePremium> getClientes() {
         return clientes;
     }
 
     @Override
-    public ArrayList<Cliente> getLista() {
+    public ArrayList<ClientePremium> getLista() {
         return lista;
     }
 
-    public void setClientes(ArrayList<Cliente> clientes) {
+    public void setClientes(ArrayList<ClientePremium> clientes) {
         this.clientes = clientes;
     }
 
     @Override
-    public void setLista(ArrayList<Cliente> lista) {
+    public void setLista(ArrayList<ClientePremium> lista) {
         this.lista = lista;
     }
 
-    public void addCliente(Cliente cliente) {
+    public void addCliente(ClientePremium cliente) {
         clientes.add(cliente);
     }
 

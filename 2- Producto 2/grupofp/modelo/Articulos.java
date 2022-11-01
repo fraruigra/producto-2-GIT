@@ -1,6 +1,5 @@
 package grupofp.modelo;
 
-import java.time.LocalDateTime;
 
 // LISTO
 
@@ -8,12 +7,12 @@ public class Articulos {
     // Atributos
     private String codigo;
     private String descripcion;
-    private Double precioVenta, gastosEnvio;
-    private LocalDateTime tiempoPreparacion;
+    private Float precioVenta, gastosEnvio;
+    private String tiempoPreparacion;
     // Fin atributos
 
     // Inicio constructores
-    public Articulos(String codigo, String descripcion, Double precioVenta, Double gastosEnvio, LocalDateTime tiempoPreparacion) {
+    public Articulos(String codigo, String descripcion, Float precioVenta, Float gastosEnvio, String tiempoPreparacion) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioVenta = precioVenta;
@@ -49,27 +48,27 @@ public class Articulos {
         this.descripcion = descripcion;
     }
 
-    public Double getPrecioVenta() {
+    public Float getPrecioVenta() {
         return this.precioVenta;
     }
 
-    public void setPrecioVenta(Double precioVenta) {
+    public void setPrecioVenta(Float precioVenta) {
         this.precioVenta = precioVenta;
     }
 
-    public Double getGastosEnvio() {
+    public Float getGastosEnvio() {
         return this.gastosEnvio;
     }
 
-    public void setGastosEnvio(Double gastosEnvio) {
+    public void setGastosEnvio(Float gastosEnvio) {
         this.gastosEnvio = gastosEnvio;
     }
 
-    public LocalDateTime getTiempoPreparacion() {
+    public String getTiempoPreparacion() {
         return this.tiempoPreparacion;
     }
 
-    public void setTiempoPreparacion(LocalDateTime tiempoPreparacion) {
+    public void setTiempoPreparacion(String tiempoPreparacion) {
         this.tiempoPreparacion = tiempoPreparacion;
     }
     // Fin getters and setters

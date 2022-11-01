@@ -21,11 +21,11 @@ public class Controlador {
 //Articulos    
 public String articulosLista(){
         String str;
-        if(datos.getArticulos().Vacio()){
+        if(datos.getListaArticulos(){
             str = "No existen artículos.";
 
         }else{
-            for(Articulos articulos : datos.getArticulos()){
+            for(Articulos articulos : datos.getListaArticulos(){
                 str += articulos.toString();
             }
         }return str;

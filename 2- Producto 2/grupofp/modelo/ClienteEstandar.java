@@ -1,7 +1,5 @@
 package grupofp.modelo;
 
-// CASI LISTO
-
 public class ClienteEstandar extends Clientes {
 
     public ClienteEstandar(String nombre, String domicilio, String nif, String email) {

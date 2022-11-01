@@ -1,7 +1,5 @@
 package grupofp.modelo;
 
-//CASI LISTO
-
 public class ClientePremium extends Clientes {
 
     public ClientePremium() {

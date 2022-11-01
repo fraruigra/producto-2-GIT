@@ -8,7 +8,6 @@ import java.util.ArrayList;
 // LISTO
 
 public class Pedidos {
-    // Atributos
     private int numPedido, cantidadArticulo;
     private Clientes clientes;
     private Articulos articulos;
@@ -23,7 +22,6 @@ public class Pedidos {
         this.clientes = clientes;
         this.fechaYHora = fechaYHora;
     }
-    // Fin constructor
 
 //getters y setters
     public int getNumPedido() {

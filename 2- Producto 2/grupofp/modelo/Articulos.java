@@ -20,9 +20,7 @@ public class Articulos {
         this.gastosEnvio = gastosEnvio;
         this.tiempoPreparacion = tiempoPreparacion;
     }
-    // Fin constructores
 
-    // toString
     @Override
     public String toString() {
         return "{" +
@@ -33,7 +31,6 @@ public class Articulos {
                 ", tiempoPreparacion='" + getTiempoPreparacion() + "'" +
                 "}";
     }
-    // Fin toString
 
     // Getters and Setters
     public String getCodigo() {

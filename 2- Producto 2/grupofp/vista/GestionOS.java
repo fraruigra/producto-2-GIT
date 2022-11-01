@@ -167,26 +167,26 @@ public boolean Gestion_Pedidos(boolean salir){
                     datos.setListaPedidos(lista);
                     break;
                 case 2:
-                    datos.eliminarPedido(lista); 
+                    datos.eliminarPedido(lista);
                     break;
                 case 3:
-                for(ListaPedidos listaPedidos : listaPedidos){
-                    if(!listaArticulos.articulo.getEnviado()){
-                        listaPedidos.pedidos.tostring();
+                    for (ListaPedidos listaPedidos : listaPedidos) {
+                        if (!listaArticulos.articulo.getEnviado()) {
+                            listaPedidos.pedidos.tostring();
+                        }
                     }
-                }
                     break;
                 case 4:
-                    for(ListaPedidos listaPedidos : listaPedidos){
-                        if(listaArticulos.articulo.getEnviado()){
+                    for (ListaPedidos listaPedidos : listaPedidos) {
+                        if (listaArticulos.articulo.getEnviado()) {
                             listaPedidos.pedidos.tostring();
+                        }
                     }
-                }                  
                     break;
                 case 0:
-                    salir=true;
-                }
+                    salir = true;
+            }
         }
 
-}}
-    
+    }
+}

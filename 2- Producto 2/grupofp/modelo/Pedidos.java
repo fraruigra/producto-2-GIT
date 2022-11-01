@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-
 // LISTO
 
 public class Pedidos {
@@ -13,17 +12,17 @@ public class Pedidos {
     private Articulos articulos;
     private LocalDateTime fechaYHora;
     // Fin atributos
-   
 
     // Constructor
-    public Pedidos(int numPedido, int cantidadArticulo, Articulos articulos, Clientes clientes, LocalDateTime fechaYHora) {
+    public Pedidos(int numPedido, int cantidadArticulo, Articulos articulos, Clientes clientes,
+            LocalDateTime fechaYHora) {
         this.numPedido = numPedido;
         this.cantidadArticulo = cantidadArticulo;
         this.clientes = clientes;
         this.fechaYHora = fechaYHora;
     }
 
-//getters y setters
+    // getters y setters
     public int getNumPedido() {
         return numPedido;
     }
@@ -31,6 +30,7 @@ public class Pedidos {
     public void setNumPedido(int numPedido) {
         this.numPedido = numPedido;
     }
+
     public int getCantidadArticulo() {
         return cantidadArticulo;
     }
@@ -38,6 +38,7 @@ public class Pedidos {
     public void setCantidadArticulo(int cantidadArticulo) {
         this.cantidadArticulo = cantidadArticulo;
     }
+
     public Clientes getClientes() {
         return clientes;
     }
@@ -45,6 +46,7 @@ public class Pedidos {
     public void setClientes(Clientes clientes) {
         this.clientes = clientes;
     }
+
     public Articulos getArticulos() {
         return articulos;
     }
@@ -52,6 +54,7 @@ public class Pedidos {
     public void setArticulos(Articulos articulos) {
         this.articulos = articulos;
     }
+
     public LocalDateTime getFechaYHora() {
         return fechaYHora;
     }
@@ -60,24 +63,23 @@ public class Pedidos {
         this.fechaYHora = fechaYHora;
     }
 
-    public boolean pedidoEnviado(){
+    public boolean pedidoEnviado() {
         long minutos = ChronoUnit.MINUTES.between(this.getFechaYHora(), LocalDateTime.now());
-        return(articulos.getTiempoPreparacion() <= minutos);
+        return (Articulos.tiempoPreparacion <= minutos);
     }
 
-    public double precioEnvio(){
-        Double descuentoEnvio = articulos.getGastosEnvio() * clientes.descuentoEnvio() / 100;
+    public double precioEnvio() {
+        Double descuentoEnvio = articulos.getGastosEnvio() * clientes.descuentoEnv() / 100;
         Double gastosEnvio = articulos.getGastosEnvio() - descuentoEnvio;
         Double precioTotal = articulos.getPrecioVenta() * this.cantidadArticulo + gastosEnvio;
 
         return precioTotal;
     }
+
     @Override
     public String toString() {
         return "Pedidos [numPedido=" + numPedido + ", cantidadArticulo=" + cantidadArticulo + ", clientes=" + clientes
                 + ", articulos=" + articulos + ", fechaYHora=" + fechaYHora + "]";
     }
-    
-    
 
 }

@@ -1,5 +1,6 @@
 package grupofp.modelo;
 
+import java.time.LocalDateTime;
 
 // LISTO
 
@@ -7,17 +8,18 @@ public class Articulos {
     // Atributos
     private String codigo;
     private String descripcion;
-    private Float precioVenta, gastosEnvio;
-    private String tiempoPreparacion;
+    private Double precioVenta, gastosEnvio;
+    static LocalDateTime tiempoPreparacion;
     // Fin atributos
 
     // Inicio constructores
-    public Articulos(String codigo, String descripcion, Float precioVenta, Float gastosEnvio, String tiempoPreparacion) {
+
+    public Articulos(String codigo, String descripcion, Double precioVenta, Double gastosEnvio,
+            LocalDateTime tiempoPreparacion2) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioVenta = precioVenta;
         this.gastosEnvio = gastosEnvio;
-        this.tiempoPreparacion = tiempoPreparacion;
     }
 
     @Override
@@ -48,30 +50,33 @@ public class Articulos {
         this.descripcion = descripcion;
     }
 
-    public Float getPrecioVenta() {
+    public Double getPrecioVenta() {
         return this.precioVenta;
     }
 
-    public void setPrecioVenta(Float precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
-    public Float getGastosEnvio() {
+    public Double getGastosEnvio() {
         return this.gastosEnvio;
     }
 
-    public void setGastosEnvio(Float gastosEnvio) {
+    public void setGastosEnvio(Double gastosEnvio) {
         this.gastosEnvio = gastosEnvio;
     }
 
-    public String getTiempoPreparacion() {
+    public LocalDateTime getTiempoPreparacion() {
         return this.tiempoPreparacion;
     }
 
-    public void setTiempoPreparacion(String tiempoPreparacion) {
+    public void setTiempoPreparacion(LocalDateTime tiempoPreparacion) {
         this.tiempoPreparacion = tiempoPreparacion;
     }
     // Fin getters and setters
 
-    
+    public boolean add(Articulos articulo) {
+        return false;
+    }
+
 }

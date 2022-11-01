@@ -1,7 +1,10 @@
 package grupofp.modelo;
 
 public abstract class Clientes {
-    private String nombre, domicilio, nif, email;
+    protected static String nombre;
+    private String domicilio;
+    private String nif;
+    private String email;
 
     // Constructores
     public Clientes(String nif, String nombre, String email, String domicilio) {
@@ -58,8 +61,5 @@ public abstract class Clientes {
     public abstract float calcAnual();
 
     public abstract float descuentoEnv();
-
-
-
 
 }

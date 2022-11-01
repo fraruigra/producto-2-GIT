@@ -4,25 +4,26 @@ import java.util.ArrayList;
 
 public class Lista<L> {
 
-    protected ArrayList<L> list;
+    protected ArrayList<L> lista;
 
-    public Lista(){
-        list = new ArrayList<>();
+    public Lista() {
+        lista = new ArrayList<>();
     }
 
-    public boolean delete(L l){
-        return list.remove(l);
+    public boolean delete(L l) {
+        return lista.remove(l);
     }
-    public boolean add(L l){
-        if(list.contains(l))
+
+    public boolean add(Clientes cliente) {
+        if (lista.contains(cliente))
             return false;
-        list.add(l);
+        lista.add((L) cliente);
         return true;
     }
 
-    public ArrayList<L> getArrayList(){
-        
-        return new ArrayList<>(list);
+    public ArrayList<L> getArrayList() {
+        ArrayList<L> alist = new ArrayList<>(lista);
+        return alist;
     }
 
-}    
+}
